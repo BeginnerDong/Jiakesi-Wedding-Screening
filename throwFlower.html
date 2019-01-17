@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>贾克斯</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="贾克斯">
+<meta name="description" content="贾克斯">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>
+<link href="css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/base.js" type="application/javascript"></script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/rem.js"></script>
+</head>
+<body style="background:url(images/img.png) no-repeat;position: relative;
+background-size:100% 100%;background-attachment: fixed;">
+<div id="app">
+    <div style="width:100%;height:100%;">
+       <div class="contain_others" style="margin-top:0.4rem;">
+           <div class="reward">
+               <div class="reward_left">
+                    <div class="reward_box flexRowBetween">
+                        <div class="click_btn" @click="cooper_click(1,mainImg,'minus')">
+                          <img src="images/icon7.png"/>
+                        </div>
+                        <transition-group  name="fade">
+                          <div class="reward_img" v-for="item in mainImg" :key="item.name">
+                                  <img :src="item.url">
+                          </div>
+                      </transition-group >
+                        <div class="click_btn" @click="cooper_click(1,mainImg,'add')">
+                          <img src="images/icon6.png"/>
+                        </div>
+                    </div>
+                    <div class="submit_info" style="width:90%;">三等奖</div>
+                    <div class="begin_btn">
+                        开始
+                    </div>
+                    <div class="submit_info flex" style="width:90%;">
+                      <div class="join_number">233人参与</div>
+                      <div class="reward_number flex">
+                          <span>一次抽奖</span>
+                          <input placeholder="1" value="" />
+                          <span>人</span>
+                      </div>
+                    </div>
+               </div>
+               <div class="reward_left reward_right">
+                 <div class="submit_info" style="width:90%;">获奖总人数<span>(2)</span></div>
+                 <div class="reward_person flex">
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                    <div class="reward_person_item">
+                        <img src="images/img7.png"/>
+                        <p>陈墨涵</p>
+                    </div>
+                 </div>
+               </div>
+           </div>
+       </div>
+    </div>
+    <div class="throwingScreen">
+        <div class="contain">
+            <div class="screen_item flex" >
+                <div class="screen_item_in">
+                    <image src="images/icon5.png"></image>
+                    <p>全屏</p>
+                </div>
+            </div>
+            <div class="screen_item flex" @click="intoPath('sign')">
+                <div class="screen_item_in">
+                    <image src="images/icon4.png"></image>
+                    <p>签到</p>
+                </div>
+            </div>
+            <div class="screen_item flex"  @click="intoPath('gameTwo')">
+                <div  class="screen_item_in">
+                    <image src="images/icon3.png"></image>
+                    <p>发请帖</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('gameOne')">
+                <div  class="screen_item_in">
+                    <image src="images/icon2.png"></image>
+                    <p>背新娘</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('album')">
+                <div  class="screen_item_in">
+                    <image src="images/icon1.png"></image>
+                    <p>相册</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('throwFlower')">
+                <div  class="screen_item_in">
+                    <image src="images/icon.png"></image>
+                    <p>扔捧花</p>
+                </div>
+            </div>
+            <div class="screen_item flex" @click="intoPath('index')">
+                <div  class="screen_item_in">
+                    <image src="images/home.png"></image>
+                    <p>回首页</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="js/bootstrap.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/my.js"></script>
+<script src="js/rem.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+           mainImg:['images/img9.png','images/img9.png','images/img9.png']
+        }
+    },
+    created: function () {
+      const self = this;
+      setInterval(function(){
+          self.cooper_click(1,self.mainImg,'add')
+      }, 3000);
+    },
+    methods:{
+        cooper_click(standard,array,type){
+            const self = this;
+            var res = window.base.jsTurn(self.cooperStart,standard,array,type);
+            self.web_cooperData = res.array;
+            self.cooperStart = res.start;
+        },
+
+       intoPath(url){
+            console.log(url);
+            var into_url = url;
+            console.log(into_url);
+            window.location.href=into_url+'.html'
+        }
+      
+    }
+});
+</script>
+</body>
+</html>

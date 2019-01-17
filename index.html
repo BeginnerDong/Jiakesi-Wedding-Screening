@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>贾克斯</title>
+<!-- custom-theme -->
+<meta name="baidu-site-verification" content="z8EeuYl0nS" />
+<meta name="keywords" content="贾克斯">
+<meta name="description" content="贾克斯">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+<link href="css/basic.css" rel="stylesheet" type="text/css"/>
+<link href="css/style.css" rel="stylesheet" type="text/css"/>             
+<link href="css/responsive.css" rel="stylesheet" type="text/css"/>
+<link href="css/font-awesome.min.css" rel="stylesheet">
+<script src="js/browser.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="js/base.js" type="application/javascript"></script>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script src="js/rem.js"></script>
+</head>
+<body style="background:url(images/bg1.png) no-repeat;background-size: 100%;position: relative;
+background-size:100% 100%;background-attachment: fixed;overflow:hidden;"
+>
+<div id="app">
+    <div style="width:100%;height:100%;" style="position: relative;">
+        <div class="flowOne flowSport">
+          <img src="images/img16_03.png"/>
+        </div>
+       <div class="contain_other" style="position: relative;">
+          <div class="startOne start">
+            <img src="images/img20.png"/>
+          </div>
+           <div class="wedding_title flex">
+               <div class="wedding_title_left">
+                   2018
+               </div>
+               <div class="wedding_title_right">
+                   <div class="color1 weddingTime">9月20日12点</div>
+                   <div class="wedding_user">张三&李四婚礼</div>
+               </div>
+           </div>
+           <div class="game flexRowBetween">
+               <div class="game_item game_item1" @click="intoPath('throwFlower')">
+                   扔捧花
+               </div>
+               <div class="game_item game_item2" @click="intoPath('album')">
+                   相册
+               </div>
+               <div class="game_item game_item3" @click="intoPath('game')">
+                   游戏
+               </div>
+               <div class="game_item game_item4" @click="intoPath('sign')">
+                   签到
+               </div>
+           </div>
+       </div>
+       <div class="startTwo start">
+          <img src="images/img20.png"/>
+        </div>
+    </div>
+    <div class="throwingScreen">
+        <div class="contain">
+            <div class="screen_item flex" >
+                <div class="screen_item_in">
+                    <image src="images/icon5.png"></image>
+                    <p>全屏</p>
+                </div>
+            </div>
+            <div class="screen_item flex" @click="intoPath('sign')">
+                <div class="screen_item_in">
+                    <image src="images/icon4.png"></image>
+                    <p>签到</p>
+                </div>
+            </div>
+            <div class="screen_item flex"  @click="intoPath('gameTwo')">
+                <div  class="screen_item_in">
+                    <image src="images/icon3.png"></image>
+                    <p>发请帖</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('gameOne')">
+                <div  class="screen_item_in">
+                    <image src="images/icon2.png"></image>
+                    <p>背新娘</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('album')">
+                <div  class="screen_item_in">
+                    <image src="images/icon1.png"></image>
+                    <p>相册</p>
+                </div>
+            </div>
+            <div class="screen_item flex"   @click="intoPath('throwFlower')">
+                <div  class="screen_item_in">
+                    <image src="images/icon.png"></image>
+                    <p>扔捧花</p>
+                </div>
+            </div>
+            <div class="screen_item flex" @click="intoPath('index')">
+                <div  class="screen_item_in">
+                    <image src="images/home.png"></image>
+                    <p>回首页</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="flowTwo">
+        <img src="images/img18.png"/>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+<script type="text/javascript " src="js/bootstrap.js"></script>
+<script src="js/jquery.waypoints.min.js"></script>
+<script src="js/my.js"></script>
+<script src="js/rem.js"></script>
+<script type="text/javascript">
+var app = new Vue({
+    el: '#app',
+    data: function() {
+        return {
+           
+        }
+    },
+    created: function () {
+      
+    },
+    methods:{
+       intoPath(url){
+            console.log(url);
+            var into_url = url;
+            console.log(into_url);
+            window.location.href=into_url+'.html'
+        }
+      
+    }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,806 @@
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+.flexRowBetween{
+    display:flex;
+    align-items:center;
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */  
+    display: -moz-box; /* Firefox 17- */  
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */  
+    display: -moz-flex; /* Firefox 18+ */  
+    display: -ms-flexbox; /* IE 10 */  
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+     -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    box-align:center;
+    -webkit-align-items: center;
+    align-items: center;
+    }
+.avoidOverflow{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.flex{
+    display:flex;
+    align-items:center;
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */  
+    display: -moz-box; /* Firefox 17- */  
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */  
+    display: -moz-flex; /* Firefox 18+ */  
+    display: -ms-flexbox; /* IE 10 */  
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    box-align:center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.flexCenter{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+     -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -moz-box-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    box-align:center;
+    -webkit-align-items: center;
+    align-items: center;
+}
+.color{
+    color:#089fe3;
+}
+.color1{
+    color:#fff;
+}
+.color3{
+    color:#333;
+}
+.color6{
+    color:#666;
+}
+.color9{
+    color:#999;
+}
+.img-responsive{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.contain_other{
+    width:62.5%;
+    margin:0 auto;
+}
+.contain{
+    width:1200px;
+    margin:0 auto;
+}
+.reward{
+    width:100%;
+    height:7.2rem;
+    border:solid 4px rgba(126,113,143,0.3);
+    display:flex;
+}
+.wedding_title{
+    margin-top:4%;
+}
+.wedding_title_left{
+    width:50%;
+    font-size:1.34rem;
+    text-align:right;
+    color: #fff236;
+    background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(255, 242, 54, 1)), to(rgba(255, 170, 54, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.wedding_title_right{
+    width:50%;
+}
+.weddingTime{
+    font-size:0.38rem;
+}
+.wedding_user{
+    font-size:0.48rem;
+     background-image: -webkit-gradient(linear, 0 0, 0 bottom, from(rgba(253, 72, 177, 1)), to(rgba(198, 17, 182, 1)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.game{
+    margin-top:1rem;
+}
+.game_item1{
+    background:url(../images/img11.png) no-repeat;   
+}
+.game_item2{
+    background:url(../images/img12.png) no-repeat;   
+}
+.game_item3{
+    background:url(../images/img13.png) no-repeat;   
+}
+.game_item4{
+    background:url(../images/img14.png) no-repeat;   
+}
+.game_item{
+    width:2.4rem;
+    height:2.4rem;
+    font-size:0.5rem;
+    line-height:2.4rem;
+    background-size:100% 100%;
+    text-align: center;
+    color:#fff;
+    cursor:pointer;
+}
+.throwingScreen{
+    width:100%;
+    height:1.15rem;
+    background:rgba(0,0,0,0.3);
+    position:fixed;
+    left:0;
+    bottom:0;
+}
+.screen_item{
+    width:1.18rem;
+    height:1.15rem;
+    float:right;
+    text-align:center;
+    cursor:pointer;
+}
+.screen_item img{
+    width:0.44rem;
+    height:0.44rem;
+}
+.screen_item p{
+    font-size:0.2rem;
+    color:#fff;
+}
+.screen_item_in{
+    width:100%;
+    text-align: center;
+}
+.reward{
+
+}
+.reward_left{
+   width:50%; 
+   margin-top:0.4rem;
+}
+.reward_box{
+    width:4.2rem;
+    height:2.74rem;
+    margin:0 auto;
+}
+.click_btn img{
+    width:0.6rem;
+    height:1.1rem;
+}
+.reward_img{
+    width:2.74rem;
+    height:2.74rem;
+}
+.reward_img image{
+    width:100%;
+    height:100%;
+}
+.submit_info{
+    width:4.28rem;
+    height:0.72rem;
+    border-radius:0.1rem;
+    margin:0 auto;
+    line-height:0.72rem;
+    text-align: center;
+    background:#2fd2cd;
+    font-size:0.2rem;
+    color:#fff;
+}
+.begin_btn{
+    width:1.28rem;
+    height:1.28rem;
+    overflow: hidden;
+    border-radius:50%;
+    border:solid 0.1rem #dfdfdf;
+    background: #f01f1f;
+    margin:0.48rem auto;
+    font-size:0.32rem;
+    color:#fff;
+    text-align: center;
+    line-height:1.1rem;
+    cursor:pointer;
+}
+.reward_box {
+    width:4.28rem;
+    margin:0 auto;
+}
+.reward_img img{
+  width:100%;
+  height:100%;  
+  margin:0 auto;
+}
+.join_number{
+    font-size:0.28rem;
+    color:#fff;
+    width:50%;
+}
+.reward_number{
+    width:50%;
+}
+.reward_number input{
+    width:0.7rem;
+    height:0.4rem;
+    border-radius:0.05rem;
+    margin:0 0.12rem;
+    border:0;
+    color:#666;
+    text-align: center;
+}
+.reward_person_item{
+    width:33.33%;
+    height:1.62rem;
+    text-align:center;
+    margin-top:0.22rem;
+}
+.reward_person_item img{
+    width:1.24rem;
+    height:1.24rem;
+    overflow:hidden;
+    border-radius:50%;
+}
+.reward_person_item p{
+    text-align: center;
+    font-size:0.16rem;
+    color:#f2f2f2;
+    margin-top:0.12rem;
+}
+.reward_person{
+    flex-wrap:wrap;
+}
+.banner2{
+    height:6.8rem;
+    width:62.5%;
+    margin:0 auto;
+
+}
+#myCarousel{
+    height:6.8rem;
+    overflow: hidden;
+    margin-top:0.6rem;
+}
+.banner_box{
+    width:14.34rem;
+    position:relative;
+    margin:0 auto;
+}
+.barrage_left{
+    width:25%;
+    position:fixed;
+    left:0;
+    bottom:1.18rem;
+    height:4.48rem;
+    overflow:hidden;
+}
+.barrage_right{
+    width:25%;
+    position:fixed;
+    right:0;
+    bottom:1.18rem;
+    height:4.48rem;
+    overflow:hidden;
+}
+.barrage_item{
+    width:100%;
+    height:1.02rem;
+    border-radius:0 0.06rem 0.06rem 0;
+    overflow:hidden;
+
+}
+.barrage_item1{
+    border-radius: 0.06rem 0 0 0.06rem;
+}
+.barrage_item_in{
+    width:100%;
+    height:86%;
+    background:rgba(65,14,62,0.4);
+}
+.user_img{
+    width:0.8rem;
+    height:0.8rem;
+    border-radius:50%;
+    overflow: hidden;
+    margin:0 auto;
+}
+.user_img img{
+    width:100%;
+    height:100%;
+}
+.barrage_img_left{
+    width:24%;
+}
+.barrage_cont_right{
+    width:78%;
+}
+.game_list{
+    width:100%;
+    height:1.9rem;
+    border-radius:0.1rem;
+    background:rgba(76,40,124,0.4);
+    margin-top:0.8rem;
+}
+.game_left,.game_right{
+    width:21.5%;
+    text-align:center;
+}
+.game_center{
+    width:57%;
+}
+.game_left img{
+    width:2rem;
+    height:1.4rem;
+    border-radius:0.1rem;
+    margin:0 auto;
+}
+.begin_game{
+    width:2.3rem;
+    height:0.8rem;
+    line-height:0.8rem;
+    text-align: center;
+    font-size: 0.3rem;
+    border-radius:0.3rem;
+    background:#d3283c;
+    color:#fff;
+}
+.game_tlt{
+    position:relative;
+    width:100%;
+    height:2rem;
+    line-height:2rem;
+}
+.game_tlt p{
+    font-size:0.6rem;
+    text-align: center;
+    color:#fff;
+}
+.game_tlt img{
+    width:1.4rem;
+    height:1.4rem;
+    position: absolute;
+    right:0;
+    top:0.46rem;
+}
+.game_person{
+    width:100%;
+    height:5rem;
+    border-radius:0.1rem;
+    border:solid 1px #fff;
+    position:relative;
+}
+.font30{
+    font-size:0.3rem;
+}
+.game_person span{
+    color:#eb3434;
+}
+.game_titlt{
+    width:90%;
+    margin:0.32rem auto;
+}
+.begin_btns{
+    font-size:0.4rem;
+    color:#fff;
+    background:#ff4d4d;
+    display:block;
+}
+.begin_games{
+    width:100%;
+    position: absolute;
+    left:0;
+    bottom:0.34rem;
+}
+.gameShowTlt{
+    width:100%;
+    height:1.18rem;
+    line-height:1.18rem;
+    font-size:0.6rem;
+    color:#fff;
+    text-align: center;
+}
+.gameRanking{
+    width:100%;
+    height:1rem;
+    margin-bottom:0.2rem;
+}
+.rankingNumber{
+    width:8%;
+    font-size:0.3rem;
+    color:#fff;
+}
+.rankingUser{
+    width:12%;
+    text-align: center;
+}
+.rankingProcess{
+    width:74%;
+    height:100%;
+}
+.rankingDep{
+    width:6%;
+    font-size:.2rem;
+    color:#fff;
+    height:100%;
+    line-height:0.8rem;
+}
+.rankingUser img{
+    width:0.6rem;
+    height:0.6rem;
+    border-radius:50%;
+    margin:0 auto;
+}
+.rankingUser p{
+    font-size:0.2rem;
+    color:#fff;
+    text-align: center;
+}
+.process{
+    width:100%;
+    height:0.4rem;
+    overflow: hidden;
+    border-radius:0.4rem;
+    background:rgba(209,204,209,0.4);
+    margin-top:0.22rem;
+}
+.process_in{
+    width:50%;
+    overflow: hidden;
+    border-radius:0.4rem;
+    background:#e224df;
+    height:100%;
+}
+.process_icon img{
+    width:0.3rem;
+    height:0.4rem;
+}
+.process_icon{
+    width:20%;
+}
+.second{
+    width:2.4rem;
+    height:2.4rem;
+    position: relative;
+    border-radius:50%;
+    border:solid 0.08rem #ff912f;
+}
+.first{
+    width:2.8rem;
+    height:2.8rem;
+    position: relative;
+    border-radius:50%;
+    border:solid 0.08rem #ffc807;
+}
+.second .img1{
+    width:100%;
+    height:100%;
+    border-radius:50%;
+}
+.second img{
+    width:100%;
+    height:100%;
+}
+.second .img2{
+    width:1.14rem;
+    height:1.02rem;
+    position:absolute;
+    right:0;
+    top:-0.7rem;
+}
+.second .img3{
+    width:3.02rem;
+    height:0.66rem;
+    position:absolute;
+    left:-0.3rem;
+    bottom:-0.4rem;
+}
+.first .img1{
+    width:100%;
+    height:100%;
+}
+.first .img2{
+    width:1.14rem;
+    height:1.02rem;
+    position:absolute;
+    right:0;
+    top:-0.7rem;
+}
+.first .img3{
+    width:3.02rem;
+    height:0.66rem;
+    position:absolute;
+    left:-0.3rem;
+    bottom:-0.4rem;
+}
+.third .img1{
+    width:100%;
+    height:100%;
+}
+.third .img2{
+    width:1.14rem;
+    height:1.02rem;
+    position:absolute;
+    right:0;
+    top:-0.7rem;
+}
+.third .img3{
+    width:2.62rem;
+    height:0.66rem;
+    position:absolute;
+    left:-0.3rem;
+    bottom:-0.4rem;
+}
+.third{
+    width:2.1rem;
+    height:2.1rem;
+    position: relative;
+    border-radius:50%;
+    border:solid 0.08rem #ffb472;
+}
+.endRanking{
+    width:1rem;
+}
+.end_img img{
+    width:1rem;
+    height:0.2rem;
+    margin-bottom:0.1rem;
+}
+.end_tlt{
+    height:1.3rem;
+    line-height:1.3rem;
+    font-size:0.6rem;
+    color:#fff;
+    text-align: center;
+    width:100%;
+}
+.endRanking{
+    width:100%;
+}
+.content_box{
+    width:62.5%;
+    position:absolute;
+    left:18.75%;
+    bottom:0;
+    height:100%;
+}
+.endVertical{
+    width:16.66%;
+    height:6.6rem;
+    position: relative;
+}
+.endVertical_cont{
+    width:100%;
+    height:100%;
+}
+.endRankingTop{
+    position:absolute;
+    left:25%;
+    bottom:0;
+    width:50%;
+
+}
+.end_numbers{
+    font-size:0.2rem;
+    color:#fff;
+    text-align: center;
+    height:0.6rem;
+}
+.end_notice{
+    font-size:0.5rem;
+    color: #fff;
+    width:6rem;
+    height:3rem;
+    background:rgba(0,0,0,0.4);
+    border-radius: 0.1rem;
+    position: absolute;
+    left:50%;
+    top:50%;
+    margin-left:-3rem;
+    margin-top:-1.5rem;
+    text-align: center;
+    line-height:3rem;
+}
+.sustom_item{
+    width:20%;
+    text-align: center;
+    height:1.6rem;
+    margin-bottom:0.2rem;
+}
+.sustomUser{
+    width:1.4rem;
+    height:1.5rem;
+    background:rgba(32,18,58,0.6);
+    border-radius:0.1rem;
+    margin:0 auto;
+}
+.sustomUser img{
+    width:1rem;
+    height:1rem;
+    border-radius:50%;
+}
+.sustomUser p{
+    font-size: 0.2rem;
+    color:#fff;
+}
+.custom{
+    flex-wrap:wrap;
+    margin-top:0.35rem;
+}
+.textRight{
+    text-align:right;
+}
+.bottomRank{
+    width:16.66%;
+    text-align: center;
+}
+.bottomRank .rankingUser{
+    text-align:center;
+    width:100%;
+}
+.contain_others{
+    width:62.5%;
+    margin:0 auto;
+}
+/*******************动画**********************/
+.startOne{
+    width:0.52rem;
+    height:0.44rem;
+    position: absolute;
+    left:1rem;
+    top:0.6rem;
+}
+.startTwo{
+    width:0.52rem;
+    height:0.44rem;
+    position: absolute;
+    right:1rem;
+    bottom:0rem;
+}
+.start{
+    animation:star 0.7s infinite;
+    -webkit-animation:star 0.7s infinite;
+}
+.star img{
+    width:100%;
+    height:100%;
+}
+@keyframes star{
+    0%{
+        transform:scale(0.8,0.8);
+        opacity:0.4;
+    }
+    50%{
+        transform:scale(1.2,1.2);
+        opacity:1;
+    }
+    100%{
+        transform:scale(0.8,0.8);
+        opacity:0.8;
+    }
+}
+@-webkit-keyframes star{
+    0%{
+        transform:scale(0.8,0.8);
+        opacity:0.6;
+    }
+    50%{
+        transform:scale(1.2,1.2);
+        opacity:1;
+    }
+    100%{
+        transform:scale(0.8,0.8);
+        opacity:0.8;
+    }
+}
+.flowOne{
+    width:1.64rem;
+    height:0.86rem;
+    position:absolute;
+    left:2rem;
+    top:0;
+    z-index:99;
+}
+.flowSport{
+    animation:flowOne 2s  both infinite;
+    -webkit-animation:flowOne 2s  both infinite;
+}
+@keyframes flowOne{
+    0%{
+        transform:translate(0px,0px);
+        opacity:1;
+    }
+    100%{
+        transform:translate(1000px,665px);
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes flowOne{
+    0%{
+        transform:translate(0px,0px);
+        opacity:1;
+    }
+    100%{
+         transform:translate(100px,265px);
+        opacity:0;
+    }
+}
+@keyframes flowTwo{
+    0%{
+        transform:translate(0px,0px);
+        opacity:1;
+    }
+    100%{
+        transform:translate(100px,265px);
+        opacity:0;
+    }
+}
+
+@-webkit-keyframes flowTwo{
+    0%{
+        transform:translate(0px,0px);
+        opacity:1;
+    }
+    100%{
+         transform:translate(1000px,665px);
+        opacity:0;
+    }
+}
+.flowTwo{
+    width:1rem;
+    height:0.4rem;
+    position: absolute;
+    left:1rem;
+    bottom:1rem;
+    animation:flowOne 4s infinite;
+    -webkit-animation:flowOne 4s infinite;
+}
+.flowThree{
+    width:0.88rem;
+    height:0.68rem;
+    position:left:40%;
+    height:40%;
+     animation:flowTwo 4s infinite;
+    -webkit-animation:flowTwo 4s infinite;
+}
+/******************弹幕动画********************/
+@keyframes moveUp{
+    0%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(-1.02rem);
+    }
+}
+@-webkit-keyframes moveUp{
+    0%{
+        -webkit-transform: translateY(0);
+    }
+    100%{
+        -webkit-transform: translateY(-1.02rem);
+    }
+}
+.barrage_item{
+    animation:moveUp 4s forwards infinite;
+    -webkit-animation:moveUp 4s forwards infinite;
+}
