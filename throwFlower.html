@@ -29,27 +29,33 @@ background-size:100% 100%;background-attachment: fixed;">
            <div class="reward">
                <div class="reward_left">
                     <div class="reward_box flexRowBetween">
-                        <div class="click_btn" @click="cooper_click(1,mainImg,'minus')">
+                        <div class="click_btn" @click="changeIndex('min')">
                           <img src="images/icon7.png"/>
                         </div>
                         <transition-group  name="fade">
-                          <div class="reward_img" v-for="item in mainImg" :key="item.name">
-                                  <img :src="item.url">
+                          <div class="reward_img" v-for="(item,index) in mainData" :key="item.id" v-if="choosedIndex==index">
+                                <img  :src="item.mainImg[0].url">
                           </div>
-                      </transition-group >
-                        <div class="click_btn" @click="cooper_click(1,mainImg,'add')">
+                      	</transition-group >
+                        <div class="click_btn" @click="changeIndex('add')">
                           <img src="images/icon6.png"/>
                         </div>
                     </div>
-                    <div class="submit_info" style="width:90%;">三等奖</div>
-                    <div class="begin_btn">
+s
+                    <div class="submit_info" style="width:90%;" v-for="(item,index) in mainData" v-if="choosedIndex==index" >
+	                    {{item.title}}
+
+	                </div>
+
+
+                    <div class="begin_btn"  @click="gamelogAdd">
                         开始
                     </div>
                     <div class="submit_info flex" style="width:90%;">
-                      <div class="join_number">233人参与</div>
+                      <div class="join_number">{{mainData[0]&&mainData[0].user&&mainData[0].user.pCount?mainData[0].user.pCount:''}}人参与</div>
                       <div class="reward_number flex">
                           <span>一次抽奖</span>
-                          <input placeholder="1" value="" />
+                          <input placeholder="1" value="" v-model="submiData.count"/>
                           <span>人</span>
                       </div>
                     </div>
@@ -57,43 +63,17 @@ background-size:100% 100%;background-attachment: fixed;">
                <div class="reward_left reward_right">
                  <div class="submit_info" style="width:90%;">获奖总人数<span>(2)</span></div>
                  <div class="reward_person flex">
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
+                    <div class="reward_person_item" v-for="item in gamelogData">
+                        <img :src="item.user[0].headImgUrl"/>
+                        <p>{{item.user[0].nick_name}}</p>
                     </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
-                    <div class="reward_person_item">
-                        <img src="images/img7.png"/>
-                        <p>陈墨涵</p>
-                    </div>
+                   
                  </div>
                </div>
            </div>
        </div>
     </div>
+
     <div class="throwingScreen">
         <div class="contain">
             <div class="screen_item flex" >
@@ -151,21 +131,122 @@ var app = new Vue({
     el: '#app',
     data: function() {
         return {
-           mainImg:['images/img9.png','images/img9.png','images/img9.png']
+        	submiData:{
+        		count:''
+        	},
+           mainImg:[],
+           mainData:[],
+           gamelogData:[],
+           choosedIndex:0
         }
     },
+
     created: function () {
       const self = this;
-      setInterval(function(){
-          self.cooper_click(1,self.mainImg,'add')
-      }, 3000);
+      this.getMainData()
+      
     },
+
     methods:{
-        cooper_click(standard,array,type){
+
+
+    	  getMainData(){
+		    const self = this;
+		    const postData = {};
+		    postData.token= window.base.getToken();
+		    postData.searchItem = {
+		    	user_type:2,
+		    	type:2
+		    };
+		    postData.getAfter = {
+		    	user:{
+		    		tableName:'FeastUser',
+		    		middleKey:'status',
+		    		key:'status',
+		    		searchItem:{
+		    			feast_no:window.base.getInfo().feast_no
+		    		},
+		    		condition:'=',
+		    		compute:{
+              			pCount:[
+                		'count','count',searchItem={status:1}
+                		]
+                	}
+		    	}
+		    };
+		    const callback = (res)=>{
+		      if(res.info.data.length>0){
+		      	 self.mainData.push.apply(self.mainData,res.info.data);
+		      	
+		      }else{
+		      	alert('没有更多了')
+		      } 
+		    };
+		    window.base.gameGet(postData,callback);
+		  },
+
+		  gamelogAdd(){
+		  	const self = this;
+		  	const postData = {};
+		    postData.token= window.base.getToken();
+		    postData.data = {
+		    	relation_id:1,
+		    	user_no:'U117927215877881',
+		    	final:self.mainData[self.choosedIndex].id
+		    };
+		    const callback = (res)=>{
+		      if(res.solely_code==100000){
+		      	  console.log(res);
+		      	  self.gamelogGet()
+		      }else{
+		      	alert('网络错误')
+		      } 
+		    };
+		    window.base.gamelogAdd(postData,callback);
+		  },
+
+		  gamelogGet(){
+		  	const self = this;
+		  	const postData = {};
+		    postData.token= window.base.getToken();
+		    postData.getAfter = {
+		    	user:{
+		    		tableName:'FeastUser',
+		    		middleKey:'user_no',
+		    		key:'user_no',
+		    		searchItem:{
+		    			status:1
+		    		},
+		    		condition:'=',
+		    	}
+		    };
+		    const callback = (res)=>{
+		      if(res.solely_code==100000){
+		      	  self.gamelogData.push.apply(self.gamelogData,res.info.data)
+		      }else{
+		      	alert('网络错误')
+		      } 
+		    };
+		    window.base.gamelogGet(postData,callback);
+		  },
+
+
+          changeIndex(type){
             const self = this;
-            var res = window.base.jsTurn(self.cooperStart,standard,array,type);
-            self.web_cooperData = res.array;
-            self.cooperStart = res.start;
+          	if(type=='min'){
+          		if(self.choosedIndex>0){
+          			self.choosedIndex -= 1
+          		}else{
+          			alert('前面没有啦')
+          		}
+          	}else{
+          		if(self.choosedIndex<self.mainData.length-1){
+          			self.choosedIndex += 1
+          		}else{
+          			alert('后面没有啦')
+          		}	
+          		
+          	}
         },
 
        intoPath(url){

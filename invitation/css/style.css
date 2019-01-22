@@ -1028,3 +1028,18 @@ swiper{
     animation: fadeInLeft both 0.5s linear;
     -webkit-animation: fadeInLeft both 0.5s linear;
 }
+/******上一页********/
+.pre_page{
+	width:160rpx;
+	height:60rpx;
+	position:absolute;
+	right:20rpx;
+	bottom:10%
+}
+.next_page{
+	width:160rpx;
+	height:60rpx;
+	position:absolute;
+	right:20rpx;
+	bottom:15%
+}

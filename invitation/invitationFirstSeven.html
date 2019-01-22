@@ -32,14 +32,16 @@
 					<img src="images/invitationOne_img7.png"/>
 				</div>
 				<div class="invitationFirstSix_Tright">
-					<img src="images/invitationOne_img6.jpg"/>
-					<input type="file" class="upload"/>
+					<img :src="submitData.mainImg&&submitData.mainImg['6-1']&&submitData.mainImg['6-1'].url?
+					submitData.mainImg['6-1'].url:''"/>
+					<input type="file" class="upload" @change="uploadImg" data-position="6-1"/>
 				</div>
 			</div>
 			<div class="invitationFirstSix_top  invitationFirstSix_bottom flex">
 				<div class="invitationFirstSix_Bright">
-					<img src="images/invitationOne_img6.jpg"/>
-					<input type="file" class="upload"/>
+					<img :src="submitData.mainImg&&submitData.mainImg['6-2']&&submitData.mainImg['6-2'].url?
+					submitData.mainImg['6-2'].url:''"/>
+					<input type="file" class="upload" @change="uploadImg" data-position="6-2"/>
 				</div>
 				<div class="invitationFirstSix_Bleft ">
 					<img src="images/invitationOne_img7_1.png"/>
@@ -47,7 +49,9 @@
 			</div>
 			<div class="invitation_bottom"></div>
 		</div>
-		<a class="save color1 bg" href="invitationFirstEight.html">保存</a>
+			<a class="save color1 bg" @click="articleUpdate">保存</a>
+			<a class="color1 bg pre_page"    @click="toBack">上一页</a>
+			<a class="color1 bg next_page"  @click="toNext" >下一页</a>
 	</div>
 </div>
 
@@ -59,12 +63,107 @@ var app = new Vue({
     el: '#app',
     data: function() {
         return {
-           
+           submitData:{
+           	  mainImg:[],
+           }
         }
     },
     created: function () {
-      
+      this.articleGet()
     },
+
+
+    methods:{
+
+
+    	articleGet(){
+		    const self = this;
+		    const postData = {};
+		    postData.searchItem = {
+		    	id:window.base.GetRequest().id
+		    };
+		    const callback = (res)=>{
+		      if(res.solely_code==100000){
+		        self.submitData.mainImg = res.info.data[0].mainImg;
+
+
+		      }else{
+		      	alert('数据错误')
+		      }
+
+		    };
+		    window.base.articleGet(postData,callback);
+		},
+
+		  
+
+		articleUpdate(){
+		    const self = this;
+		    const postData = {};
+		    postData.token = window.base.getToken();
+		    postData.searchItem={
+		      id:window.base.GetRequest().id,
+		    };
+		    postData.data = window.base.cloneForm(self.submitData);
+		    const callback = (res)=>{
+		      if(res.solely_code==100000){
+		        alert('修改成功');
+		       
+		      }else{
+		      	alert(res.msg)
+		      }
+		    };
+		    window.base.articleUpdate(postData,callback);
+		},
+
+		
+
+		submit(){
+		    const self = this;
+		    window.base.buttonCanClick(self);
+		    const pass = window.base.checkComplete(self.submitData);
+		    if(pass){
+		      self.messageAdd();    
+		    }else{
+		      alert('请补全信息');
+		    };
+		},
+
+		toBack(){
+			const self = this;
+			window.location.href = './invitationFirstSix.html?id='+window.base.GetRequest().id
+		},
+
+		toNext(){
+			const self = this;
+			window.location.href = './invitationFirstEight.html?id='+window.base.GetRequest().id
+		},
+
+	  	uploadImg(e){
+			var self = this;
+			var file = e.target.files[0];
+			var position = e.target.dataset.position;
+			console.log(e)
+			var param = new FormData();
+			param.append('file',file,file.name);
+			param.append('thirdapp_id',2);
+			param.append('token',window.base.getToken());
+
+			console.log(self.item)
+			var callback = function (res) {
+				if(res.solely_code==100000&&res.info&&res.info.url){ 
+      				//self.submitData.mainImg.push({url:res.info.url});
+      				self.submitData.mainImg[position] = {
+      					url:res.info.url
+      				};
+      			}
+      			console.log('self.submitData',self.submitData)
+			};
+			var res = window.base.upLoadFile(param,callback);
+		},
+
+    }
+
 });
 
 </script>

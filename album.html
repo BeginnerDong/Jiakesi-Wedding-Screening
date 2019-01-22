@@ -51,120 +51,16 @@ background-size:100% 100%;background-attachment: fixed;">
       <div style="position: relative;width:100%;">
         <div :style="move_height" class="barrage_box">
 
-          <div class="barrage_item flex" >
+          <div class="barrage_item barrage_item1 flex" v-for="item in gameChatData">
             <div class="barrage_item_in flex">
+                <div class="barrage_cont_right">
+                  <p class="font18 color1 textRight">{{item.feastUser[0].nick_name}}</p>
+                  <p class="font16 color1 avoidOverflow textRight">{{item.content}}</p>
+                </div>
                 <div class="barrage_img_left">
                   <div class="user_img">
-                    <img src="images/img7.png" />
+                    <img :src="item.feastUser&&item.feastUser[0].headImgUrl?item.feastUser[0].headImgUrl:''" />
                   </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">1.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">2.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">2.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">2.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">6.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">7.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">4.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">8.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-                <div class="barrage_cont_right">
-                  <p class="font18 color1">名称</p>
-                  <p class="font16 color1 avoidOverflow">9.祝福语祝福语祝福语祝福语祝福语祝福语</p>
                 </div>
             </div>
           </div>
@@ -174,58 +70,20 @@ background-size:100% 100%;background-attachment: fixed;">
     <div class="barrage_right">
       <div style="position: relative;width:100%;">
         <div :style="move_height" class="barrage_box">
-          <div class="barrage_item barrage_item1 flex">
+          <div class="barrage_item barrage_item1 flex" v-for="item in gameChatData">
             <div class="barrage_item_in flex">
                 <div class="barrage_cont_right">
-                  <p class="font18 color1 textRight">名称</p>
-                  <p class="font16 color1 avoidOverflow textRight">1.祝福语祝福语祝福语祝福语祝福语祝福语</p>
+                  <p class="font18 color1 textRight">{{item.feastUser[0].nick_name}}</p>
+                  <p class="font16 color1 avoidOverflow textRight">{{item.content}}</p>
                 </div>
                 <div class="barrage_img_left">
                   <div class="user_img">
-                    <img src="images/img7.png" />
+                    <img :src="item.feastUser&&item.feastUser[0].headImgUrl?item.feastUser[0].headImgUrl:''" />
                   </div>
                 </div>
             </div>
           </div>
-          <div class="barrage_item barrage_item1 flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_cont_right">
-                  <p class="font18 color1 textRight">名称</p>
-                  <p class="font16 color1 avoidOverflow textRight">2.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item barrage_item1 flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_cont_right">
-                  <p class="font18 color1 textRight">名称</p>
-                  <p class="font16 color1 avoidOverflow textRight">3.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-            </div>
-          </div>
-          <div class="barrage_item barrage_item1 flex">
-            <div class="barrage_item_in flex">
-                <div class="barrage_cont_right">
-                  <p class="font18 color1 textRight">名称</p>
-                  <p class="font16 color1 avoidOverflow textRight">4.祝福语祝福语祝福语祝福语祝福语祝福语</p>
-                </div>
-                <div class="barrage_img_left">
-                  <div class="user_img">
-                    <img src="images/img7.png" />
-                  </div>
-                </div>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>
@@ -291,15 +149,54 @@ var app = new Vue({
           maxScroll:0,
           move_height:0,
           nextData:0,
+          gameChatData:[]
         }
     },
     created: function () {
       const self  = this;
+      this.gameChatGet();
       self.move_height = 'transform:translateY'+'('+self.nextData+'px)';
       self.maxScroll = self.boxHeight * 9;
       self.scrolltxt();
     },
+
+
+
     methods:{
+
+
+      gameChatGet(isNew){
+        const self = this;
+        const postData = {
+          token:window.base.getToken(),
+        };
+        postData.searchItem = {
+          user_type:0
+
+        };
+        postData.getAfter = {
+          feastUser:{
+            tableName:'FeastUser',
+            middleKey:'relation_user_no',
+            key:'user_no',
+            searchItem:{
+              status:1
+            },
+            condition:'='
+          }
+        };
+        const callback = (res)=>{
+          if(res.info.data.length>0){
+            self.gameChatData.push.apply(self.gameChatData,res.info.data)
+          }else{
+            alert('没有数据')
+          }   
+   
+        };
+        window.base.gamechatGet(postData,callback);
+      },
+
+
       scrolltxt:function(){
         const self = this;
         var interval = setInterval(function () {

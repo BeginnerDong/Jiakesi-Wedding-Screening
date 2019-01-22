@@ -1,5 +1,5 @@
 window.base={
-    g_restUrl:'http://www.tianduclouds.com/api/public/index.php/api/v1/',
+    g_restUrl:'http://39.98.170.233/api/public/index.php/api/v1/',
     getData:function(params){
         if(!params.type){
             params.type='get';
@@ -22,6 +22,16 @@ window.base={
             }
         });
     },
+
+    getToken(){
+        return 'ddd5292d03301cb213ce7455e84a2ce8'
+    },
+
+    getInfo(){
+        return {
+        	feast_no:'F00001'
+        }
+    },
    
     messageAdd:function(param,callback) {
         var allParams = {
@@ -34,6 +44,31 @@ window.base={
         };
         this.getData(allParams)
     },
+
+    gamelogAdd(){
+        var allParams = {
+            url:'Common/GameLog/add',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.getData(allParams)	
+    },
+
+   	gamelogGet(){
+        var allParams = {
+            url:'Common/GameLog/get',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.getData(allParams)	
+    },
+
     articleList:function(param,callback) {
         var allParams = {
             url:'Common/Article/get',
@@ -57,6 +92,46 @@ window.base={
         };
         this.getData(allParams)
     },
+
+    feastUserGet(param,callback){
+        var allParams ={
+            url:'Common/FeastUser/get',
+            type:'post',
+            noToken:true,
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.getData(allParams);
+    },
+
+    gameGet(param,callback){
+        var allParams ={
+            url:'Common/Game/get',
+            type:'post',
+            noToken:true,
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.getData(allParams);
+    },
+
+    gamechatGet(param,callback){
+        var allParams ={
+            url:'Common/GameChat/get',
+            type:'post',
+            noToken:true,
+            data:param,
+            sCallback: function(data) {
+                callback && callback(data);
+            }
+        };
+        this.getData(allParams);
+    },
+
     findKeyFromArray:function(Array,key,value) {  
         var new_array = []; 
         for (var i = 0; i < Array.length; i++) {

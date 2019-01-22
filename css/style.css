@@ -185,6 +185,7 @@
     width:4.2rem;
     height:2.74rem;
     margin:0 auto;
+    overflow:hidden;
 }
 .click_btn img{
     width:0.6rem;

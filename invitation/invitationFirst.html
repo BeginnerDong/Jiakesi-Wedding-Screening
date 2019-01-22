@@ -33,27 +33,24 @@
 					邀请函
 				</div>
 				<div class="invitation_img">
-					<img src="images/img7@2x.png"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['0-1']&&mainData.mainImg['0-1'].url?mainData.mainImg['0-1'].url:''"/>
 				</div>
 				<div class="invitation_word">
 					<img src="images/invitation-word.png"/>
 				</div>
 				<div class="bride flexCenter">
 					<div class="flexCenter bride_item">
-						<div class="font28 color1 bride_before">新郎:</div>
-						<div class="input font28 color1">张三三</div>
+						<div class="font28 color1 bride_before">标题:</div>
+						<div class="input font28 color1">{{mainData.title}}</div>
 					</div>
-					<div class="flexCenter bride_item">
-						<div class="font28 color1 bride_before">新娘:</div>
-						<div class="input font28 color1">李思思</div>
-					</div>
+					
 				</div>
-				<div class="font28 invitation_word1">我们诚邀您来参加我们的婚礼</div>
+				<div class="font28 invitation_word1">{{mainData.small_title}}</div>
 				<div class="time flex">
-					<div class="color" style="text-align:center;width:100%;">时间：2014-5-5</div>
+					<div class="color" style="text-align:center;width:100%;">时间：{{mainData.passage1}}</div>
 				</div>
 				<div class="address flex">
-					<div class="font28 color avoidOverflow">地点:地址地址地址地址地址地址地址地址</div>
+					<div class="font28 color avoidOverflow">地点:{{mainData.address}}</div>
 				</div>
 			</div>
 		</div>
@@ -65,14 +62,14 @@
 			<div class="font28 color invitationFirstOne_tlt2">你陪着我 我牵着你</div> 
 			<div class="font28 color invitationFirstOne_tlt2">不用多语 静静地走下去</div>
 			<div class="invitationFirstOne_img" >
-				<img src="images/img2.jpg"/>
+				<img :src="mainData.mainImg&&mainData.mainImg['1-1']&&mainData.mainImg['1-1'].url?mainData.mainImg['1-1'].url:''"/>
 			</div>
 		</div>
 		<!-- 1-3 -->
-		<div class="invitation w690 section" id="section3">
+		<div class="invitation w690 section section3">
 			<div class="invitationFirstTwo flex">
 				<div class="invitationFirstTwo_left">
-					<img src="images/img2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['2-1']&&mainData.mainImg['2-1'].url?mainData.mainImg['2-1'].url:''"/>
 				</div>
 				<div class="invitationFirstTwo_right">
 					<div class="invitationFirstTwo_tit color">
@@ -85,7 +82,7 @@
 				</div>
 			</div>
 			<div class="invitationFirstTwo_bottom">
-				<img src="images/banner.jpg"/>
+				<img :src="mainData.mainImg&&mainData.mainImg['2-2']&&mainData.mainImg['2-2'].url?mainData.mainImg['2-2'].url:''"/>
 			</div>
 		</div>
 		<!-- 1-4 -->
@@ -99,17 +96,17 @@
 				</div>
 			</div>
 			<div class="invitationFirstThree_center">
-				<img src="images/banner.jpg"/>
+				<img :src="mainData.mainImg&&mainData.mainImg['3-1']&&mainData.mainImg['3-1'].url?mainData.mainImg['3-1'].url:''"/>
 			</div>
 			<div class="invitationFirstThree_bottom flexRowBetween">
 				<div class="invitationFirstThree_item dalay-1s">
-					<img src="images/img2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['3-2']&&mainData.mainImg['3-2'].url?mainData.mainImg['3-2'].url:''"/>
 				</div>
 				<div class="invitationFirstThree_item dalay-2s">
-					<img src="images/img2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['3-3']&&mainData.mainImg['3-3'].url?mainData.mainImg['3-3'].url:''"/>
 				</div>
 				<div class="invitationFirstThree_item dalay-3s">
-					<img src="images/img2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['3-4']&&mainData.mainImg['3-4'].url?mainData.mainImg['3-4'].url:''"/>
 				</div>
 			</div>
 		</div>
@@ -118,11 +115,11 @@
 					<img src="images/invitationOne_love4.png"/>
 			</div>
 			<div class="invitationFirstFour_center">
-				<img src="images/banner.jpg"/>
+				<img :src="mainData.mainImg&&mainData.mainImg['4-1']&&mainData.mainImg['4-1'].url?mainData.mainImg['4-1'].url:''"/>
 			</div>
 			<div class="invitationFirstFour_bottom flexRowBetween">
 				<div class="invitationFirstFour_left">
-					<img src="images/img2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['4-2']&&mainData.mainImg['4-2'].url?mainData.mainImg['4-2'].url:''"/>
 				</div>
 				<div  class="invitationFirstFour_right" style="text-align:right;">
 					<img src="images/lover4.png"/>
@@ -138,13 +135,13 @@
 				<div class="invitationFirstFive_left">
 					<div class="invitationFirstFive_left_bg"></div>
 					<div class="invitationFirstFive_left_cont bg1">
-						<img src="images/invitationOne_img6.jpg"/>
+						<img :src="mainData.mainImg&&mainData.mainImg['5-1']&&mainData.mainImg['5-1'].url?mainData.mainImg['5-1'].url:''"/>
 					</div>
 				</div>
 				<div class="invitationFirstFive_right">
 					<div class="invitationFirstFive_right_bg"></div>
 					<div class="invitationFirstFive_right_cont bg1">
-						<img src="images/invitationOne_img6.jpg"/>
+						<img :src="mainData.mainImg&&mainData.mainImg['5-2']&&mainData.mainImg['5-2'].url?mainData.mainImg['5-2'].url:''"/>
 					</div>
 				</div>
 			</div>
@@ -157,10 +154,10 @@
 			<div class="invitationFirstSix_bg"></div>
 			<div class="invitationFirstSix_top flex">
 				<div class="invitationFirstSix_Tleft">
-					<img src="images/invitationOne_img7.png"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['6-1']&&mainData.mainImg['6-1'].url?mainData.mainImg['6-1'].url:''"/>
 				</div>
 				<div class="invitationFirstSix_Tright">
-					<img src="images/invitationOne_img6.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['6-2']&&mainData.mainImg['6-2'].url?mainData.mainImg['6-2'].url:''"/>
 				</div>
 			</div>
 			<div class="invitationFirstSix_top  invitationFirstSix_bottom flex">
@@ -186,15 +183,15 @@
 					<div class="color font24" style="line-height:36rpx"> 嘴角上扬还在心跳</div>
 				</div>
 				<div class="invitationFirstSeven_right">
-					<img src="images/invitationOne_img8_1.png"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['7-1']&&mainData.mainImg['7-1'].url?mainData.mainImg['7-1'].url:''"/>
 				</div>
 			</div>
 			<div class="invitationFirstSeven_bottom flexRowBetween">
 				<div class="invitationFirstSeven_Bleft">
-					<img src="images/invitationOne1.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['7-2']&&mainData.mainImg['7-2'].url?mainData.mainImg['7-2'].url:''"/>
 				</div>
 				<div class="invitationFirstSeven_Bright">
-					<img src="images/invitationOne2.jpg"/>
+					<img :src="mainData.mainImg&&mainData.mainImg['7-3']&&mainData.mainImg['7-3'].url?mainData.mainImg['7-3'].url:''"/>
 				</div>
 			</div>
 		</div>
@@ -208,12 +205,37 @@ var app = new Vue({
     el: '#app',
     data: function() {
         return {
-           
+           mainData:{}
         }
     },
+
     created: function () {
-      
+      this.articleGet()
     },
+
+
+    methods:{
+
+
+    	articleGet(){
+		    const self = this;
+		    const postData = {};
+		    postData.searchItem = {
+		    	id:window.base.GetRequest().id
+		    };
+		    const callback = (res)=>{
+		      if(res.solely_code==100000){
+		        self.mainData = res.info.data[0];
+
+
+		      }else{
+		      	alert('数据错误')
+		      }
+
+		    };
+		    window.base.articleGet(postData,callback);
+		},
+	}
 });
 </script>
 <script type="text/javascript">

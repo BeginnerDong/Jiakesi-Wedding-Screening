@@ -1,5 +1,5 @@
 window.base={
-    g_restUrl:'https://xianjiaoda.solelycloud.com/api/public/index.php/api/v1/',
+    g_restUrl:'http://39.98.170.233/api/public/index.php/api/v1/',
 
 
     getData:function(params){
@@ -45,10 +45,40 @@ window.base={
         });
     },
 
+    getToken(){
+        return '90b625f899487607d6042bf0bcf8b8df'
+    },
+
     articleGet:function(param,callback) {
   
         var allParams = {
             url:'Common/Article/get',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.getData(allParams)
+    },    
+
+    articleAdd:function(param,callback) {
+  
+        var allParams = {
+            url:'Common/Article/add',
+            type:'post',
+            data:param,
+            sCallback: function(data){
+                callback&&callback(data);
+            }
+        };
+        this.getData(allParams)
+    },    
+
+    articleUpdate:function(param,callback) {
+  
+        var allParams = {
+            url:'Common/Article/update',
             type:'post',
             data:param,
             sCallback: function(data){
@@ -342,7 +372,7 @@ window.base={
                                 // 这个不关会扔一个默认值 application/x-www-form-urlencoded 过去，后端拿不到数据的！
                                 // 而且你甚至不能传个字符串 'multipart/form-data'，后端一样拿不到数据！
             processData: false, // 关关关！重点
-            url: 'https://xianjiaoda.solelycloud.com/api/public/index.php/api/v1/Base/FtpFile/upload',
+            url: 'http://39.98.170.233/api/public/index.php/api/v1/Base/FtpFile/upload',
             data: param,
             success:function(res){
 
